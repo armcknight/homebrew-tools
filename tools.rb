@@ -13,6 +13,7 @@ class Tools < Formula
       changetag
       inject-git-info
       migrate-changelog
+      prepare-github-release
       prepare-release
       psst
       tag-icons
