@@ -1,7 +1,7 @@
 class Tools < Formula
   desc "Collection of developer tools for versioning, changelogs, Xcode builds, and more"
   homepage "https://github.com/armcknight/tools"
-  url "https://github.com/armcknight/tools.git", tag: "0.1.0"
+  url "https://github.com/armcknight/tools.git", tag: "1.0.0"
   license "MIT"
 
   depends_on xcode: ["16.0", :build]
