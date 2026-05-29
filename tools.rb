@@ -13,9 +13,12 @@ class Tools < Formula
       changetag
       inject-git-info
       migrate-changelog
+      ota-publish
       prepare-github-release
       prepare-release
       psst
+      read-changelog
+      spm-acknowledgements
       tag-icons
       upload-symbols
       vrsn
