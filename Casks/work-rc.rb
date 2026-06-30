@@ -8,8 +8,8 @@
 # To go back to stable:    brew uninstall --cask work-rc && brew install --cask armcknight/tools/work
 
 cask "work-rc" do
-  version "0.1.0"
-  sha256 "0b650aea48a45f0951abf564be4b1c2750a897412ce4768dbbe90172525fdd3a"
+  version "0.1.1-rc.1"
+  sha256 "cc2a741d0f30f5920243de09ef03d335c49ad20e700b94fb2f3b82a588bcc2ed"
 
   url "https://github.com/armcknight/homebrew-tools/releases/download/work-#{version}/work-#{version}-aarch64-apple-darwin.tar.gz"
   name "work (release candidate)"
