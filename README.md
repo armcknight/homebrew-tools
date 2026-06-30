@@ -19,6 +19,7 @@ Each tool ships in two channels: `<name>` for stable releases and `<name>-rc` fo
 
 ```
 brew tap armcknight/tools
+brew trust armcknight/tools   # third-party taps require explicit trust
 
 # Stable channel
 brew install --cask armcknight/tools/tools
@@ -30,6 +31,8 @@ brew install --cask armcknight/tools/work-rc
 ```
 
 All four are Apple Silicon only (`aarch64-apple-darwin`).
+
+`brew trust armcknight/tools` covers every current and future cask in this tap. If you'd rather scope tighter, `brew trust --cask armcknight/tools/<cask>` works per-cask. (Without trust, casks that declare `conflicts_with` against another cask in the tap will fail to install — brew has to load the conflicting cask to verify, and the load is gated on trust.)
 
 ## How releases get here
 
