@@ -4,20 +4,32 @@ Personal Homebrew tap for [armcknight](https://github.com/armcknight)'s closed-s
 
 ## Casks
 
-| Cask | Description | Source |
-|------|-------------|--------|
-| `tools` | Collection of developer tools for Apple platform projects (changetag, vrsn, prepare-release, xcbs, psst, inject-git-info, upload-symbols, tag-icons, ota-publish, spm-acknowledgements, …) | `armcknight/tools` (private) |
-| `work` | Worktree, tmux session, and Coder workspace manager (Rust) | `armcknight/workr` (private) |
+Each tool ships in two channels: `<name>` for stable releases and `<name>-rc` for release candidates. The two channels of the same tool conflict with each other (you can only install one at a time per tool).
+
+| Cask | Channel | Source |
+|------|---------|--------|
+| `tools` | stable | `armcknight/tools` (private) |
+| `tools-rc` | release candidate | `armcknight/tools` |
+| `work` | stable | `armcknight/workr` (private) |
+| `work-rc` | release candidate | `armcknight/workr` |
+
+`tools` bundles 13 developer CLIs (`changetag`, `vrsn`, `prepare-release`, `xcbs`, `psst`, `inject-git-info`, `upload-symbols`, `tag-icons`, `ota-publish`, `spm-acknowledgements`, …). `work` is the worktree / tmux / Coder workspace manager.
 
 ## Install
 
 ```
 brew tap armcknight/tools
+
+# Stable channel
 brew install --cask armcknight/tools/tools
 brew install --cask armcknight/tools/work
+
+# Release-candidate channel (opt-in)
+brew install --cask armcknight/tools/tools-rc
+brew install --cask armcknight/tools/work-rc
 ```
 
-Both are Apple Silicon only (`aarch64-apple-darwin`).
+All four are Apple Silicon only (`aarch64-apple-darwin`).
 
 ## How releases get here
 
@@ -26,7 +38,9 @@ Each source repo runs a `release` GitHub Actions workflow on every version tag. 
 1. Builds the binary (`swift build -c release` for `tools`, `cargo build --release` for `workr`)
 2. Tarballs it as `<cask>-<version>-aarch64-apple-darwin.tar.gz`
 3. Uses a fine-grained PAT (`TAP_RELEASE_TOKEN`) to create a release on this repo named `<cask>-<version>` and attach the tarball
-4. Clones this repo, sed-bumps the matching `Casks/*.rb` (version + sha256), commits, pushes
+4. Clones this repo, sed-bumps the matching cask file (version + sha256), commits, pushes:
+   - tag `X.Y.Z` → `Casks/<cask>.rb` (stable channel)
+   - tag `X.Y.Z-rc.N` → `Casks/<cask>-rc.rb` (RC channel)
 
 So this repo's commit history is mostly automated cask bumps from the workflows.
 
@@ -35,8 +49,10 @@ So this repo's commit history is mostly automated cask bumps from the workflows.
 ```
 .
 ├── Casks/
-│   ├── tools.rb       # cask for the tools bundle
-│   └── work.rb        # cask for the work binary
+│   ├── tools.rb       # tools — stable channel
+│   ├── tools-rc.rb    # tools — release-candidate channel
+│   ├── work.rb        # work — stable channel
+│   └── work-rc.rb     # work — release-candidate channel
 └── README.md
 ```
 
