@@ -70,4 +70,6 @@ Either way, this repo's commit history is mostly automated cask bumps from those
 
 ## License
 
-License terms pending — repo is public so the cask formulas can be tapped, but the binaries they reference are licensed by each source repo. A `LICENSE` file will be added once the source-side licenses are picked.
+The cask definitions in this repo are licensed under the Apache License, Version 2.0. See [`LICENSE`](LICENSE) for the full text.
+
+The artifacts the casks reference are licensed by their own source repos. [`tools`](https://github.com/armcknight/tools) and [`workr`](https://github.com/armcknight/workr) are Apache 2.0; `claude-squad` carries no license file yet and is all-rights-reserved.
