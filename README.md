@@ -12,7 +12,7 @@ Command-line tools ship in two channels: `<name>` for stable releases and `<name
 | `tools-rc` | CLIs | release candidate | `armcknight/tools` |
 | `work` | CLI | stable | `armcknight/workr` (public, Apache 2.0) |
 | `work-rc` | CLI | release candidate | `armcknight/workr` |
-| `claude-squad` | macOS app | stable | `armcknight/claude-squad` (private) |
+| `claude-squad` | macOS app | stable | `armcknight/claude-squad` (public) |
 
 `tools` bundles 13 developer CLIs (`changetag`, `vrsn`, `prepare-release`, `xcbs`, `psst`, `inject-git-info`, `upload-symbols`, `tag-icons`, `ota-publish`, `spm-acknowledgements`, …). `work` is the worktree / tmux / Coder workspace manager. `claude-squad` is a macOS app that tracks the state of several Claude Code sessions at once.
 
@@ -40,7 +40,7 @@ Homebrew quarantines every cask download and a cask cannot opt out of that, so a
 
 ## How releases get here
 
-Each source repo runs a `release` GitHub Actions workflow on every version tag. Artifacts land here rather than on the source repo because release assets on a private repo need auth and `brew` fetches a cask URL with none — which is what `claude-squad` still depends on. `tools` and `workr` are public now, so they could serve their own assets, but they publish here too so every cask resolves the same way.
+Each source repo runs a `release` GitHub Actions workflow on every version tag. Artifacts land here rather than on the source repo because release assets on a private repo need auth and `brew` fetches a cask URL with none. Every source repo is public now, so each could serve its own assets, but they all publish here so every cask resolves the same way — and so a cask never has to change if a source repo's visibility does.
 
 **CLI casks** (`tools`, `work`):
 
