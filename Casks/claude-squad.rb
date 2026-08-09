@@ -8,8 +8,8 @@
 # .app, so a plain `brew install --cask` works — no --no-quarantine needed.
 
 cask "claude-squad" do
-  version "0.0.0"
-  sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+  version "1.1.0"
+  sha256 "5de3e3d3790bb8332ac692eba3a63dea855d483b209f4d034dc96014a1778277"
 
   url "https://github.com/armcknight/homebrew-tools/releases/download/claude-squad-#{version}/claude-squad-#{version}.zip"
   name "Claude Squad"
