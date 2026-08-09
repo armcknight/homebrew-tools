@@ -1,6 +1,6 @@
 # armcknight/homebrew-tools
 
-Personal Homebrew tap for [armcknight](https://github.com/armcknight)'s closed-source tools and apps. Hosts both the cask formulas and the prebuilt release artifacts that those casks point at — sources for each one live in their own private repos.
+Personal Homebrew tap for [armcknight](https://github.com/armcknight)'s tools and apps. Hosts both the cask formulas and the prebuilt release artifacts that those casks point at — each one is built from its own source repo, listed below.
 
 ## Casks
 
@@ -8,9 +8,9 @@ Command-line tools ship in two channels: `<name>` for stable releases and `<name
 
 | Cask | Kind | Channel | Source |
 |------|------|---------|--------|
-| `tools` | CLIs | stable | `armcknight/tools` (private) |
+| `tools` | CLIs | stable | `armcknight/tools` (public, Apache 2.0) |
 | `tools-rc` | CLIs | release candidate | `armcknight/tools` |
-| `work` | CLI | stable | `armcknight/workr` (private) |
+| `work` | CLI | stable | `armcknight/workr` (public, Apache 2.0) |
 | `work-rc` | CLI | release candidate | `armcknight/workr` |
 | `claude-squad` | macOS app | stable | `armcknight/claude-squad` (private) |
 
@@ -40,7 +40,7 @@ Homebrew quarantines every cask download and a cask cannot opt out of that, so a
 
 ## How releases get here
 
-Each source repo runs a `release` GitHub Actions workflow on every version tag. The artifact lands here rather than on the source repo because release assets on a private repo need auth, and `brew` fetches a cask URL with none.
+Each source repo runs a `release` GitHub Actions workflow on every version tag. Artifacts land here rather than on the source repo because release assets on a private repo need auth and `brew` fetches a cask URL with none — which is what `claude-squad` still depends on. `tools` and `workr` are public now, so they could serve their own assets, but they publish here too so every cask resolves the same way.
 
 **CLI casks** (`tools`, `work`):
 
@@ -65,6 +65,7 @@ Either way, this repo's commit history is mostly automated cask bumps from those
 │   ├── tools-rc.rb     # tools — release-candidate channel
 │   ├── work.rb         # work — stable channel
 │   └── work-rc.rb      # work — release-candidate channel
+├── LICENSE
 └── README.md
 ```
 
