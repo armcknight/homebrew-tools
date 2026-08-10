@@ -8,8 +8,8 @@
 # The values below are placeholders. Nothing is downloadable until the first
 # release publishes the asset to this repo.
 cask "forgery" do
-  version "0.0.0"
-  sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+  version "1.0.0"
+  sha256 "5d025666457ed1ba781a8f1afaa96863fbd0ef5b427648b2ce7c96a5ee0aa362"
 
   url "https://github.com/armcknight/homebrew-tools/releases/download/forgery-#{version}/forgery-#{version}-aarch64-apple-darwin.tar.gz"
   name "forgery"
