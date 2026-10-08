@@ -8,8 +8,8 @@
 # The values below are placeholders. Nothing is downloadable until the first
 # release publishes the asset to this repo.
 cask "superlinear" do
-  version "1.0.1"
-  sha256 "46cb1ae575738565e29cfbca5e4a083fa693c94b0f099384813c292284ca1c26"
+  version "1.1.0"
+  sha256 "40b3f9ac5f8ea1e7c25697148ca506cc01a9bbf08b6ff7197e3e3516d9989390"
 
   url "https://github.com/armcknight/homebrew-tools/releases/download/superlinear-#{version}/superlinear-#{version}-aarch64-apple-darwin.tar.gz"
   name "superlinear"
