@@ -26,8 +26,10 @@ cask "superlinear" do
   #
   #   superlinear install
   #
-  # `zap` cannot undo that, since a zap runs after the binary is gone. Run
-  # `superlinear uninstall` before uninstalling the cask.
+  # From 1.3.0 the daemon follows the cask by itself, with no hooks here
+  # (Homebrew 7 deprecates flight blocks and sandboxes their replacements away
+  # from launchd): it restarts onto an upgraded binary within a minute, and
+  # removes its own agent a few minutes after the binary is uninstalled.
   caveats <<~EOS
     Register the launch agent so the daemon starts at login:
       superlinear install
@@ -35,7 +37,8 @@ cask "superlinear" do
     Configure it first:
       ~/.config/superlinear/config.json
 
-    To stop and remove the agent:
+    Upgrades restart the daemon, and uninstalling the cask removes the agent.
+    To stop and remove the agent yourself:
       superlinear uninstall
   EOS
 
