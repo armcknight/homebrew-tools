@@ -47,7 +47,7 @@ Each source repo runs a `release` GitHub Actions workflow on every version tag. 
 1. Build the binary (`swift build -c release` for `tools`, `cargo build --release` for `workr`)
 2. Tarball it as `<cask>-<version>-aarch64-apple-darwin.tar.gz`
 3. Use a fine-grained PAT (`TAP_RELEASE_TOKEN`) to create a release on this repo named `<cask>-<version>` and attach the tarball
-4. Clone this repo, sed-bump the matching cask file (version + sha256), commit, push:
+4. Clone this repo, sed-bump the matching cask file (version + sha256), rewrite its `binary` lines from the workflow's `binaries` input, commit, push:
    - tag `X.Y.Z` → `Casks/<cask>.rb` (stable channel)
    - tag `X.Y.Z-RCN` → `Casks/<cask>-rc.rb` (RC channel)
 
