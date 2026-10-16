@@ -10,6 +10,7 @@ cask "tools" do
   depends_on arch: :arm64
 
   binary "changetag"
+  binary "check-release-ready"
   binary "inject-git-info"
   binary "migrate-changelog"
   binary "ota-publish"
