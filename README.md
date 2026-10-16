@@ -49,7 +49,7 @@ Each source repo runs a `release` GitHub Actions workflow on every version tag. 
 3. Use a fine-grained PAT (`TAP_RELEASE_TOKEN`) to create a release on this repo named `<cask>-<version>` and attach the tarball
 4. Clone this repo, sed-bump the matching cask file (version + sha256), commit, push:
    - tag `X.Y.Z` → `Casks/<cask>.rb` (stable channel)
-   - tag `X.Y.Z-rc.N` → `Casks/<cask>-rc.rb` (RC channel)
+   - tag `X.Y.Z-RCN` → `Casks/<cask>-rc.rb` (RC channel)
 
 **App casks** (`claude-squad`) go through the shared `macos-cask-release.yml` reusable workflow in `armcknight/workflows`, which adds signing to the same shape: archive → Developer ID sign → notarize → staple → `ditto` zip as `<cask>-<version>.zip` → release on this repo → bump `Casks/<cask>.rb`.
 

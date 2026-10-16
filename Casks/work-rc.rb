@@ -1,15 +1,15 @@
 # work — release-candidate channel.
 #
 # Bumped automatically by workr's release workflow on any RC tag
-# (e.g. 0.1.1-rc.1). Until the first RC is published this file is pinned
+# (e.g. 1.2.1-RC1). Until the first RC is published this file is pinned
 # to the latest stable release.
 #
 # To opt into RC builds:   brew install --cask armcknight/tools/work-rc
 # To go back to stable:    brew uninstall --cask work-rc && brew install --cask armcknight/tools/work
 
 cask "work-rc" do
-  version "0.1.1-rc.1"
-  sha256 "cc2a741d0f30f5920243de09ef03d335c49ad20e700b94fb2f3b82a588bcc2ed"
+  version "1.2.0"
+  sha256 "2d45bc506c8455eea0d35a9e4151f906f81c2c5f9ba853501dd6ed723b3f08db"
 
   url "https://github.com/armcknight/homebrew-tools/releases/download/work-#{version}/work-#{version}-aarch64-apple-darwin.tar.gz"
   name "work (release candidate)"
