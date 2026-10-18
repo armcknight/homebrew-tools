@@ -1,6 +1,6 @@
 cask "tools" do
-  version "5.0.0"
-  sha256 "8c1345f259f2e7cc780164ecb547f3fcdfda0e078bec5f39bdfd6bc69f1686a1"
+  version "5.1.0"
+  sha256 "a61041182a05ff3ff6d061d209ccfd890626ee708f9a5cece8ecc2712e996e15"
 
   url "https://github.com/armcknight/homebrew-tools/releases/download/tools-#{version}/tools-#{version}-aarch64-apple-darwin.tar.gz"
   name "tools"
