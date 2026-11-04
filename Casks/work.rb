@@ -1,6 +1,6 @@
 cask "work" do
-  version "1.2.0"
-  sha256 "2d45bc506c8455eea0d35a9e4151f906f81c2c5f9ba853501dd6ed723b3f08db"
+  version "1.3.0"
+  sha256 "8fa86b90539910bc3033e796a49ca4b16b3ef4901e17c14d89ef3e52d6017fed"
 
   url "https://github.com/armcknight/homebrew-tools/releases/download/work-#{version}/work-#{version}-aarch64-apple-darwin.tar.gz"
   name "work"
