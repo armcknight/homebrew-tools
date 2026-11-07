@@ -8,8 +8,8 @@
 # The values below are placeholders. Nothing is downloadable until the first
 # release publishes the asset to this repo.
 cask "templatr" do
-  version "0.0.0"
-  sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+  version "2.1.0"
+  sha256 "41f80ba9eb225906314b31330b60186911f40820617cdcd5726ea47d3371028d"
 
   url "https://github.com/armcknight/homebrew-tools/releases/download/templatr-#{version}/templatr-#{version}-aarch64-apple-darwin.tar.gz"
   name "templatr"
